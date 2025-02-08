@@ -25,14 +25,38 @@
       </div>
       <div class="border-1 rounded-xs p-10 mt-7 border-[#29CFA8]">
         <div class="text-3xl"> Top 10 competitors summary</div>
-        <div id="circles"> </div>
-
+        <div class="mt-7 flex gap-10 items-center justify-center" id="circles"> </div>
       </div>
+
+      <div class="mt-10 text-2xl"> Top 50 competitors in car rentals</div>
+
+      <div class="mt-10">
+        <div class="bg-[#232B41] rounded-md p-10 flex gap-30 items-center justify-start">
+          <div class="flex flex-col items-center font-medium">
+            <img width="50" height="50" src="/public/icons/rank.svg" alt="rank-icon" />
+            <div class="mt-2"> Rank </div>
+          </div>
+          <div class="flex flex-col items-center font-medium">
+            <img width="50" height="50" src="/public/icons/competitor.svg" alt="competitor-icon" />
+            <div class="mt-2">Competitor </div>
+          </div>
+          <div class="flex flex-col items-center font-medium">
+            <img width="50" height="50" src="/public/icons/seo-activity-score.svg" alt="seo-activity-score" />
+            <div class="mt-2"> SEO Activity Score</div>
+          </div>
+
+        </div>
+        <div class="accordion">
+        </div>
+      </div>
+
 
     </div>
   </div>
 
 
+  <script type="module" src="/src/accordion.ts"></script>
+  <script type="module" src="/src/circles.ts"></script>
   <script type="module" src="/src/main.ts"></script>
 </body>
 

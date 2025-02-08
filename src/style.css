@@ -7,5 +7,27 @@
   font-weight: 400;
   color-scheme: light dark;
   background-color: #101827;
-  color: white
+  color: white;
+  margin-bottom: 40px
+}
+
+.ac {
+  margin-bottom: 2px !important;
+  border-radius: 8px;
+  border: 8px;
+  padding: 7px 48px;
+}
+
+.ac .ac-trigger {
+  padding: 0px
+}
+
+.ac .ac-trigger::after {
+  content: 'open';
+  right: 30px;
+  top: 80%
+}
+
+.ac.is-active>.ac-header .ac-trigger::after {
+  content: 'close'
 }
