@@ -15,7 +15,7 @@
   margin-bottom: 2px !important;
   border-radius: 8px;
   border: 8px;
-  padding: 7px 48px;
+  padding: 30px 38px;
 }
 
 .ac .ac-trigger {
@@ -23,11 +23,13 @@
 }
 
 .ac .ac-trigger::after {
-  content: 'open';
-  right: 30px;
-  top: 80%
+  content: none !important;
 }
 
 .ac.is-active>.ac-header .ac-trigger::after {
-  content: 'close'
+  content: none !important;
+}
+
+.ac .ac-panel .ac-text {
+  padding: 0px
 }
