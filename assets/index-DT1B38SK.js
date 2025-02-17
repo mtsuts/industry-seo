@@ -23,25 +23,25 @@
           <div class="ac-panel flex gap-20 text-black items-center mt-4">
             <div class='flex gap-1 items-center'> 
             <div class='text-sm'> LCP </div>
-            <img src='/public/black-info.svg' />
+            <img src='./black-info.svg' />
             <div> ${s(Number(f.LCP)/1e3)} </div>
             </div>
     
              <div class='flex gap-1 items-center'> 
             <div class='text-sm'> CLS </div>
-            <img src='/public/black-info.svg' />
+            <img src='./black-info.svg' />
              <div> ${s(Number(f.CLS))} </div>
             </div>
     
              <div class='flex gap-1 items-center'> 
             <div class='text-sm'> FID </div>
-            <img src='/public/black-info.svg' />
+            <img src='./black-info.svg' />
              <div> ${Math.round(Number(f.FID))} </div>
             </div>
         </div>
         `)}),R(".show-more-btn").on("click",function(){i=!i,i?(R(this).attr("class","px-2 py-1 flex gap-3 items-center font-normal text-base border-2 rounded-xl  bg-[#29CFA8] text-white border-[#29CFA8]"),R(".button-text").text("Close details"),R(".arrow-svg").attr("fill","#ffffff")):(R(this).attr("class","px-2 py-1 flex gap-3 items-center font-normal text-base border-2 rounded-xl bg-white text-black border-[#D9D9D9]"),R(".button-text").text("More details"))}),new je(".accordion",{duration:300,showMultiple:!1})});const Hs=({header:t,color:e,number:n})=>{R("#circles").append("div").style("color",`${e}`).style("font-size","20px").html(`<div class='flex gap-2'> 
       <div>${t} </div> 
-<img title='test' class='cursor-pointer' src='/public/info.svg' alt='info-icon' />
+<img title='test' class='cursor-pointer' src='./info.svg' alt='info-icon' />
  </div>`).append("div").html(`
 <svg xmlns="http://www.w3.org/2000/svg" width="162" class='mt-6' height="162" viewBox="0 0 162 162" fill="none">
 
