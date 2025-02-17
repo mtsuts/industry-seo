@@ -12,6 +12,8 @@ Promise.all([
       (d, i) => i <= 49
     )
 
+    let isActive = false
+
     // Round values
     const roundedValue = d3.format('.1f')
 
@@ -24,8 +26,6 @@ Promise.all([
       .style('height', '800px')
       .style('overflow', 'auto')
 
-    let isActive = true
-
     uniqueTargets.map((d, i) => {
       const foundData =
         lighthouse.find((x) => x['target domain'].includes(d)) || {}
@@ -35,21 +35,16 @@ Promise.all([
           <button class="ac-trigger">
           <div class='flex gap-20 items-center mt-2'>
           <div> 
-           ${i + 1}
+           ${i - 1}
           </div>
           <div class='font-normal flex-1 text-center'> ${
             foundData ? d.split('.')[0] : ''
           } </div>
           <div> Seo score</div>
-          <div class='px-2 py-1 flex gap-3 items-center font-normal text-base border-2 rounded-xl ${
-            isActive
-              ? 'bg-white text-black border-[#D9D9D9]'
-              : 'bg-[#29CFA8] text-white border-none'
-          } '> 
-          ${isActive ? '<div> More Details </div>' : '<div> Close Details </div>'}
-      
-    
-    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 31 31" fill="none">
+          <div class='show-more-btn px-2 py-1 flex gap-3 items-center font-normal text-base border-2 rounded-xl bg-white border-[#D9D9D9] text-black'>
+  <div class='button-text'> More Details </div>
+ 
+    <svg xmlns="http://www.w3.org/2000/svg" class='arrow-svg' width="28" height="28" viewBox="0 0 31 31" fill="none">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M8.53981 14.2091L10.3659 12.3831L15.5317 17.5489L20.6988 12.3831L22.5249 14.2091L15.5316 21.2024L8.53981 14.2091Z" fill="#101827"/>
     </svg>
       
@@ -79,11 +74,23 @@ Promise.all([
       }
     })
 
-    // <div class='flex gap-1 items-center'>
-    // <div class='text-sm'> OSI </div>
-    // <img src='/public/black-info.svg' />
-    //  <div> ${foundData.OSI} </div>
-    // </div>
+    d3.select('.show-more-btn').on('click', function () {
+      isActive = !isActive
+      if (isActive) {
+        d3.select(this).attr(
+          'class',
+          'px-2 py-1 flex gap-3 items-center font-normal text-base border-2 rounded-xl  bg-[#29CFA8] text-white border-[#29CFA8]'
+        )
+        d3.select('.button-text').text('Close details')
+        d3.select('.arrow-svg').attr('fill', '#ffffff')
+      } else {
+        d3.select(this).attr(
+          'class',
+          'px-2 py-1 flex gap-3 items-center font-normal text-base border-2 rounded-xl bg-white text-black border-[#D9D9D9]'
+        )
+        d3.select('.button-text').text('More details')
+      }
+    })
 
     new Accordion('.accordion', {
       duration: 300,
